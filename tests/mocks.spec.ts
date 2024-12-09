@@ -104,7 +104,7 @@ test.describe('mocks', () => {
         test('token saved to local storage', async ({context}) => {
 
             await context.addInitScript(() => {
-                localStorage.setItem('jwt', token);
+                localStorage.setItem('jwt', 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuaWFtaC1jcmR0IiwiZXhwIjoxNzMzNzYyMjU3LCJpYXQiOjE3MzM3NDQyNTd9.yweK5Xi86Sxjx684aeS1l6Mq51vJSGvzyVSs8UIhDSv71vG3bgIQ7RuPf5rIKET67z0xVr7g3XC6zdaUOyy5QQ');
             });
 
             const page = await context.newPage()
