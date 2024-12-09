@@ -1,0 +1,20 @@
+{
+  "name": "mocks_pw",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "env-cmd -f .env.development --no-override playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "env-cmd": "^10.1.0"
+  }
+}
