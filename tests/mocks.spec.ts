@@ -75,8 +75,9 @@ test.describe('mocks', () => {
 
             await page.getByTestId('openStatusPopup-button').click();
             await page.getByTestId('searchOrder-input').fill('00000000');
+            const attendPageResponse = async (address: string) => await page.waitForResponse(address)
             await page.getByTestId('searchOrder-submitButton').click();
-            await page.waitForResponse(`${orderRouteMock}/**`)
+            await attendPageResponse(`${orderRouteMock}/**`)
             expect.soft(page.getByRole('heading', {name: 'Order has been delivered'})).toBeVisible()
         });
 
@@ -92,8 +93,9 @@ test.describe('mocks', () => {
 
             await page.getByTestId('openStatusPopup-button').click();
             await page.getByTestId('searchOrder-input').fill(orderNumber.toString());
+            const attendPageResponse = async (address: string) => await page.waitForResponse(address)
             await page.getByTestId('searchOrder-submitButton').click();
-            await page.waitForResponse(`${orderRouteMock}/**`)
+            await attendPageResponse(`${orderRouteMock}/**`)
             const notFoundContainer = page.getByTestId('orderNotFound-container')
             expect.soft(notFoundContainer).toBeVisible()
         });
